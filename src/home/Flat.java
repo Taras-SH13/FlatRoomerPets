@@ -3,7 +3,7 @@ package home;
 public class Flat extends Home {
 
     public int theRoomQuantity;                // количество комнат
-    public int floor;                         // этаж квартиры
+    public int floor=1;                         // этаж квартиры
     public int numberOffFlat;       // номер квартиры
     public int quantityOfResidents; // количество жильцов
     static int counter =0; // считаем квартиры
@@ -12,7 +12,7 @@ public class Flat extends Home {
         counter++;
         this.theRoomQuantity = theRoomQuantity;
         this.numberOffFlat=counter;
-        if ((counter%4)==0)
+        if (counter >4 ) // TODO Как сделать чтобы квартиры правильно распределялись по этажам!?
         {this.floor++;}
     }
 
@@ -22,6 +22,14 @@ public class Flat extends Home {
 
 }
 
-
+    @Override
+    public String toString() {
+        return "Flat{" +
+                "Количество комнат = " + theRoomQuantity +
+                ", Этаж = " + floor +
+                ", Номер квартиры = " + numberOffFlat +
+                ", Количество жильцов = " + quantityOfResidents +
+                '}';
     }
+}
 
